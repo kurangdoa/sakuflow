@@ -1,3 +1,43 @@
+# Introduction
+
+Sakuflow is a data pipelines or data flow project that will be integrated with other overall datasaku infrastructure mentioned in this diagram link. The structure of the directory would be:
+
+```
+sakuflow
+│   README.MD
+│   requirements.txt    
+│   
+└───project_a
+│   │   README.MD
+│   │   config.yaml
+│   │   
+│   └───input
+│   │       input.py
+│   │       
+│   └───staging
+│   |       staging.py
+│   |       
+│   └───output
+│   |       output.py
+│   |       
+|
+└───project_b
+|
+└───project_c
+
+```
+
+# Project Structure
+Every project will be located on each folder:
+
+- input = processing of an data from outside resource to the bucket for the project.
+- staging = after the input, data will be post-processed such as transformation or data quality check.
+- output = the cleaned data after staging environment will be further flowed into respective datalake or datawarehouse.
+
+Not every step is mandatory and there will be project with one or two steps only.
+
+For very special project, the structure might be completely different.
+
 # Setting Up Environment
 based on reneshbedre.com/blog/ttest-from-scratch.html
 
@@ -19,7 +59,7 @@ wget https://repo.maven.apache.org/maven2/org/projectnessie/nessie-integrations/
 put below into .zshrc or .bashrc
 
 ```
-export SPARK_HOME=/Users/rhyando/code/development/datasaku/spark
+export SPARK_HOME=/Users/rhyando/spark
 export PATH=$PATH:$SPARK_HOME/bin
 export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 export PYSPARK_PYTHON=python

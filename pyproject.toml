@@ -2,6 +2,13 @@
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[project]
+name = "sakuflow"
+version = "0.0.1"
+
+[tool.setuptools.packages.find]
+where = ["flow"]
+
 [tool.dagster]
 module_name = "flow"
 

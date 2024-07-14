@@ -1,1 +1,10 @@
 pendulum==3.0.0
+
+#dagster
+dagster==1.7.12
+dagster-postgres
+dagster-aws
+dagster-k8s
+dagster-celery[flower,redis,kubernetes]
+dagster-celery-k8s
+dagster-webserver

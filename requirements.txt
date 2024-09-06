@@ -1,5 +1,5 @@
 pendulum==3.0.0
-
+python-dotenv==1.0.1
 #dagster
 dagster==1.7.12
 dagster-postgres

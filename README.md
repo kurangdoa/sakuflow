@@ -38,7 +38,44 @@ Not every step is mandatory and there will be project with one or two steps only
 
 For very special project, the structure might be completely different.
 
-# Setting Up Environment
+# enter venv
+sudo chmod +x /Users/rhyando/code/development/datasaku/_venv/bin/activate
+source /Users/rhyando/code/development/datasaku/_venv/bin/activate
+pip install -r requirements.txt
+source deactivate
+
+# special if working with vscode
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}",
+            "env": {"PYTHONPATH": "/data/datasaku/sakuflow"}
+        }
+    ]
+}
+
+# test dagster
+
+dagster is installed into the sakuflow and in order to test the pipeline locally, 
+we could run this command.
+
+```
+dagster dev -w workspace.yaml
+```
+
+
+# archive
+
+## Setting Up Environment
 based on reneshbedre.com/blog/ttest-from-scratch.html
 
 ```
@@ -65,8 +102,3 @@ export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH
 export PYSPARK_PYTHON=python
 export PATH=$PATH:$JAVA_HOME/jre/bin
 ```
-# enter venv
-sudo chmod +x /Users/rhyando/code/development/datasaku/_venv/bin/activate
-source /Users/rhyando/code/development/datasaku/_venv/bin/activate
-pip install -r requirements.txt
-source deactivate

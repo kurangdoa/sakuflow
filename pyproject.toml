@@ -10,7 +10,7 @@ version = "0.0.1"
 dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]
-where = ["flow"]
+where = ["flow", "util"]
 
 [tool.dagster]
 module_name = "flow"

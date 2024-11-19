@@ -5,9 +5,13 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sakuflow"
 version = "0.0.1"
+dynamic = ["dependencies"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml"]
 
 [tool.setuptools.packages.find]
 where = ["flow", "util"]

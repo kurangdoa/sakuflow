@@ -10,9 +10,9 @@ from pyspark.sql.types import StringType
 from dagster import AssetExecutionContext, MetadataValue, asset, MaterializeResult, DailyPartitionsDefinition, DagsterInstance
 from datasaku import datasaku_spark
 from util.file_folder.file_folder import get_latest_file_from_folder
-from test.extract.extract import extract
-from test.transform.transform import transform
-from test.load.load import load
+from flow.test.extract.extract import extract
+from flow.test.transform.transform import transform
+from flow.test.load.load import load
 
 def farmhash_python(string_input:str):
     return farmhash.hash64(string_input)
